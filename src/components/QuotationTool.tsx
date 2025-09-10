@@ -1345,19 +1345,19 @@ const QuotationTool: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Country</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Country *</label>
                 <select value={formData.country} onChange={(e) => handleInput("country", e.target.value as CountryKey)} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white" disabled={isLoadingStep1}>
                   <option value="">Select your country</option>
                   {COUNTRY_OPTIONS.map((c) => <option key={c} value={c}>{c}</option>)}
                 </select>
                 {errors.country && <p className="text-red-600 text-sm mt-1">{errors.country}</p>}
-                <p className="text-xs text-gray-500 mt-1">Prices are calculated internally in MUR; your final total will be shown in your currency.</p>
+                <p className="text-xs text-gray-500 mt-1">Prices are automatically calculated in your currency.</p>
                 <div className="mt-2"><p className="text-sm text-gray-700">Converted total: <span className="font-medium">{convertedPrice.currency} {Math.round(convertedPrice.amount).toLocaleString()}</span></p></div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">WhatsApp Number</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">WhatsApp Number *</label>
                   <PhoneInputComponent
                     value={formData.whatsappNumber}
                     onChange={handleWhatsAppInput}
@@ -1370,7 +1370,7 @@ const QuotationTool: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
                   <input type="email" value={formData.email} onChange={(e) => handleInput("email", e.target.value)} placeholder="Enter your email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" disabled={isLoadingStep1} />
                   {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
                 </div>
@@ -1384,7 +1384,7 @@ const QuotationTool: React.FC = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">Website Details</h2>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">What type of website do you need?</label>
+                <label className="block text-sm font-medium text-gray-700 mb-4">What type of website do you need? *</label>
                 <div className="space-y-3">
                   {[
                     { value: "landing", label: "Landing Page (One Pager)" },
@@ -1422,7 +1422,7 @@ const QuotationTool: React.FC = () => {
 
                   {formData.products && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-4">Insert products or training?</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-4">Insert products or training? *</label>
                       <div className="space-y-3">
                         {[
                           { value: "insert-all", label: `Insert all → + MUR ${getInsertAllPrice().toLocaleString()}` },
@@ -1442,7 +1442,7 @@ const QuotationTool: React.FC = () => {
 
               {formData.websiteType !== "landing" && formData.websiteType !== "ecommerce" && (
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-4">Number of Pages</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-4">Number of Pages *</label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {[
                       { value: "1-3", label: "1-3" },
@@ -1461,7 +1461,7 @@ const QuotationTool: React.FC = () => {
               )}
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">Design Approach</label>
+                <label className="block text-sm font-medium text-gray-700 mb-4">Design Approach *</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {[
                     { value: "template", label: "Essential (Ready-made layout, quickly adapted to your brand)" },
@@ -1479,7 +1479,7 @@ const QuotationTool: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">Features (Can select multiple features)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-4">Features (Can select multiple features) *</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {([
                     { value: "contact-form", label: "Contact Form" },
@@ -1508,10 +1508,10 @@ const QuotationTool: React.FC = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">Final Details</h2>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">Timeline</label>
+                <label className="block text-sm font-medium text-gray-700 mb-4">Timeline *</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {[
-                    { value: "6-8-weeks", label: "6-8 weeks → No change" },
+                    { value: "6-8-weeks", label: "6-8 weeks" },
                     { value: "3-5-weeks", label: "3-5 weeks" },
                     { value: "2-4-weeks", label: "2-4 weeks" },
                     { value: "<2-weeks", label: "<2 weeks" },
@@ -1526,7 +1526,7 @@ const QuotationTool: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">Hosting</label>
+                <label className="block text-sm font-medium text-gray-700 mb-4">Hosting *</label>
                 <div className="space-y-3">
                   {[
                     { value: "bim africa to provide", label: "BIM Africa to provide" },
@@ -1542,7 +1542,7 @@ const QuotationTool: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">Domain</label>
+                <label className="block text-sm font-medium text-gray-700 mb-4">Domain *</label>
                 <div className="space-y-3">
                   {[
                     { value: "bim africa to provide", label: "BIM Africa purchases (non-premium)" },
@@ -1558,7 +1558,7 @@ const QuotationTool: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Comments</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Comments (Optional)</label>
                 <textarea value={formData.comments} onChange={(e) => handleInput("comments", e.target.value)} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Any additional comments or requirements..." />
               </div>
             </div>
