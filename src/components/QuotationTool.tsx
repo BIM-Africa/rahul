@@ -1464,10 +1464,10 @@ const QuotationTool: React.FC = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-4">Design Style *</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {[
-                    { value: "template", label: "Template" },
-                    { value: "semi-custom", label: "Semi-custom" },
-                    { value: "fully-custom", label: "Fully custom" },
-                    { value: "not-sure", label: "Not sure" },
+                    { value: "template", label: "Essential (Ready-made layout, quickly adapted to your brand)" },
+                    { value: "semi-custom", label: "Tailored (Partly customized for a unique look and feel)" },
+                    { value: "fully-custom", label: "Signature (Fully bespoke, crafted from scratch to your vision)" },
+                    { value: "not-sure", label: "Need Guidance (We’ll recommend the best option for your goals)" },
                   ].map((o) => (
                     <label key={o.value} className="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
                       <input type="radio" name="designStyle" value={o.value} checked={formData.designStyle === (o.value as any)} onChange={(e) => handleInput("designStyle", e.target.value as any)} className="w-4 h-4 text-blue-600 border-gray-300" />
