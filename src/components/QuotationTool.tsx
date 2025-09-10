@@ -960,7 +960,7 @@ const QuotationTool: React.FC = () => {
       if (formData.websiteType !== "landing" && formData.websiteType !== "ecommerce" && !formData.pages) {
         newErrors.pages = "Select number of pages";
       }
-      if (!formData.designStyle) newErrors.designStyle = "Select design style";
+      if (!formData.designStyle) newErrors.designStyle = "Select design approach";
     }
 
     if (step === 3) {
@@ -1333,13 +1333,13 @@ const QuotationTool: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
                   <input type="text" value={formData.fullName} onChange={(e) => handleInput("fullName", e.target.value)} placeholder="Enter your full name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" disabled={isLoadingStep1} />
                   {errors.fullName && <p className="text-red-600 text-sm mt-1">{errors.fullName}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Company Name (Optional)</label>
                   <input type="text" value={formData.companyName} onChange={(e) => handleInput("companyName", e.target.value)} placeholder="Enter your company name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" disabled={isLoadingStep1} />
                 </div>
               </div>
@@ -1461,7 +1461,7 @@ const QuotationTool: React.FC = () => {
               )}
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">Design Style *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-4">Design Approach</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {[
                     { value: "template", label: "Essential (Ready-made layout, quickly adapted to your brand)" },
@@ -1479,7 +1479,7 @@ const QuotationTool: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">Features (checkboxes, sum prices)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-4">Features (Can select multiple features)</label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {([
                     { value: "contact-form", label: "Contact Form" },
